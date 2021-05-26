@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset=utf-8 />
+<title>test</title>
+<style>
+body {padding-top:50px} 
+</style> 
+</head>
+<body>
+    <h1>to do list</h1>
+<input type="number" id="id" placeholder="id" name="array[]" value="" /><br>
+<input type="text" id="text1" placeholder="proirity"></input><br>
+<input type="text" id="text2" placeholder="task"></input><br>
+<input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>
+<input type="button" id="button2" value="Show all" onclick="display_array();"></input>
+<input type="button" id="button3" value="remove" onclick="remove();"></input>
+<input type="button" id="button4" value="search" onclick="searchArr();"></input>
+
+
+<div id="Result"></div> 
+
+<script>
+    var x = 0;
+var array = Array();
+
+function add_element_to_array()
+{
+ array[x] = document.getElementById("id").value+"," +document.getElementById("text1").value+"," +document.getElementById("text2").value ;
+ alert("to do list: " + array[x] + " Added to the list " + x);
+ x++;
+ document.getElementById("text1").value = "";
+}
+
+function remove()
+{
+    var array=["id".value+"text1".value+"text2".value] ;
+array.splice(0,3);
+document.getElementById("").value = "";
+
+
+}
+
+function searchArr()
+{
+    var array = ["id".value, "text1".value, "text2".value];
+var a = array.indexOf("");
+
+document.getElementById("id".value+ "text1".value+ "text2".value)= "";
+
+}
+
+function display_array()
+{
+   var e = "<hr/>";   
+    
+   for (var y=0; y<array.length; y++)
+   {
+     e += "my to do list :" +"  " + array[y] + "<br/>";
+   }
+   document.getElementById("Result").innerHTML = e;
+}
+</script>
+
+</body>
+</html>
